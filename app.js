@@ -320,7 +320,7 @@ Additional Instructions:
 
 
 const VOICE = "alloy";
-const PORT = process.env.PORT || 5050; // Allow dynamic port assignment
+const PORT = process.env.PORT; // Allow dynamic port assignment
 
 // List of Event Types to log to the console. See the OpenAI Realtime API Documentation: https://platform.openai.com/docs/api-reference/realtime
 const LOG_EVENT_TYPES = [
