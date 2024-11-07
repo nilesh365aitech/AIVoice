@@ -319,7 +319,7 @@ Additional Instructions:
 /Additional Instructions`;
 
 
-const VOICE = "alloy";
+const VOICE = "shimmer";
 const PORT =  process.env.PORT || 5050 ; // Allow dynamic port assignment
 
 // List of Event Types to log to the console. See the OpenAI Realtime API Documentation: https://platform.openai.com/docs/api-reference/realtime
@@ -339,7 +339,7 @@ const SHOW_TIMING_MATH = false;
 
 // Root Route
 fastify.get("/", async (request, reply) => {
-  reply.send({ message: "Twilio Media Stream Server is runnin!" });
+  reply.send({ message: "Twilio Media Stream Server is runninggg!" });
 });
 
 // Route for Twilio to handle incoming calls
@@ -360,7 +360,7 @@ const tools = [
     type: "function",
     name: "get_current_time",
     description:
-      "Use this function to retrieve the current date and time in IST format.",
+      "Use this function to retrieve the current date and time.",
     parameters: {
       type: "object",
       properties: {},
@@ -514,7 +514,7 @@ fastify.register(async (fastify) => {
       openAiWs.send(JSON.stringify(sessionUpdate));
 
       // Uncomment the following line to have AI speak first:
-      // sendInitialConversationItem();
+      sendInitialConversationItem();
     };
 
     // Send initial conversation item if AI talks first
@@ -799,7 +799,7 @@ fastify.register(async (fastify) => {
   });
 });
 
-fastify.listen({ port: PORT }, (err) => {
+fastify.listen({ port: PORT, host: '0.0.0.0' }, (err) => {
   if (err) {
     console.error(err);
     process.exit(1);
