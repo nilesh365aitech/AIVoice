@@ -627,7 +627,7 @@ fastify.register(async (fastify) => {
       try {
         const response = JSON.parse(data);
 
-        console.log(`Received event: ${response.type}`, response);
+        // console.log(`Received event: ${response.type}`, response);
         // console.log("Error details:", response.response.status_details.error);
 
 
